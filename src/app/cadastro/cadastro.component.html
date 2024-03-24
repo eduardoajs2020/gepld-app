@@ -1,0 +1,38 @@
+
+<div>
+  <h2>Cadastro de Indício de Movimentação Atípica</h2>
+  <form (submit)="cadastrarIndicio()">
+    <div>
+      <label for="tipoPessoa">Tipo Pessoa:</label>
+      <select [(ngModel)]="tipoPessoa" name="tipoPessoa">
+        <option value="1">PF</option>
+        <option value="2">PJ</option>
+      </select>
+    </div>
+    <div>
+      <label for="cpfCnpj">{{ tipoPessoa === 1 ? 'CPF:' : 'CNPJ:' }}</label>
+      <input type="text" [(ngModel)]="cpfCnpj" name="cpfCnpj">
+    </div>
+    <div>
+      <label for="nomeCliente">Nome do Cliente:</label>
+      <input type="text" [(ngModel)]="nomeCliente" name="nomeCliente">
+    </div>
+    <div>
+      <label for="produto">Produto:</label>
+      <input type="text" [(ngModel)]="produto" name="produto">
+    </div>
+    <div>
+      <label for="data">Data:</label>
+      <input type="date" [(ngModel)]="data" name="data">
+    </div>
+    <div>
+      <label for="valorMovimentado">Valor Movimentado:</label>
+      <input type="number" [(ngModel)]="valorMovimentado" name="valorMovimentado">
+    </div>
+    <div>
+      <label for="detalhesMovimentacao">Detalhes da Movimentação:</label>
+      <textarea [(ngModel)]="detalhesMovimentacao" name="detalhesMovimentacao"></textarea>
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div>
+  <h2>Listagem de Indícios de Movimentação Atípica</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo Pessoa</th>
+        <th>CPF/CNPJ</th>
+        <th>Nome do Cliente</th>
+        <th>Produto</th>
+        <th>Data</th>
+        <th>Valor Movimentado</th>
+        <th>Detalhes da Movimentação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let indicio of indicios">
+        <td>{{ indicio.tipoPessoa }}</td>
+        <td>{{ indicio.cpfCnpj }}</td>
+        <td>{{ indicio.nomeCliente }}</td>
+        <td>{{ indicio.produto }}</td>
+        <td>{{ indicio.data }}</td>
+        <td>{{ indicio.valorMovimentado }}</td>
+        <td>{{ indicio.detalhesMovimentacao }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
