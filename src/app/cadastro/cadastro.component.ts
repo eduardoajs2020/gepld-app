@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './cadastro.component.css'
 })
 export class CadastroComponent implements OnInit{
+buscaCliente() {
+throw new Error('Method not implemented.');
+}
+cadastro() {
+throw new Error('Method not implemented.');
+}
 
   tipoPessoa: number = 1;
   cpfCnpj: string = '';
@@ -32,7 +38,7 @@ export class CadastroComponent implements OnInit{
       detalhesMovimentacao: this.detalhesMovimentacao
     };
 
-    this.http.post<any>('http://localhost:3000/indicios', data)
+    this.http.post<any>('http://localhost:4200/indicios', data)
       .subscribe(response => {
         console.log(response);
       });
