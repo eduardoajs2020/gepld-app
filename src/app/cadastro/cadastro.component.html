@@ -4,6 +4,7 @@
 <div>
   <h2>Cadastro de Indício de Movimentação Atípica</h2>
   <form (submit)="cadastrarIndicio()">
+
     <div class="tipo-pessoa">
       <label for="tipoPessoa">Tipo Pessoa:</label>
       <select [(ngModel)]="tipoPessoa" name="tipoPessoa">
@@ -11,6 +12,7 @@
         <option value="2">PJ</option>
       </select>
     </div>
+
     <div class="identificador-pessoa">
       <label for="cpfCnpj">{{ tipoPessoa === 1 ? 'CPF:' : 'CNPJ:' }}</label>
       <input type="text" [(ngModel)]="cpfCnpj" name="cpfCnpj" ngxMask="000.000.000-00 || 00.000.000/0000-00">
@@ -19,10 +21,12 @@
     <div class="pesquisa-pessoa">
       <app-button textButton="Pesquisar" size="70" (click)="buscaCliente()">Pesquisar</app-button>
     </div>
+
     <div class="cliente-movimento">
       <label for="nomeCliente">Nome do Cliente:</label>
       <input type="text" [(ngModel)]="nomeCliente" name="nomeCliente">
     </div>
+
     <div class="produto-movimento">
       <label for="produto">Produto:</label>
       <select [(ngModel)]="produto" name="produto">
@@ -33,6 +37,7 @@
         <option value="5">Ações Online</option>
       </select>
     </div>
+
     <div class="data-movimento">
       <label for="data">Data:</label>
       <input type="date" [(ngModel)]="data" name="data">
@@ -42,10 +47,12 @@
       <label for="valorMovimentado">Valor Movimentado:</label>
       <input type="number" [(ngModel)]="valorMovimentado" name="valorMovimentado">
     </div>
+
     <div class="detalhe-movimento">
       <label for="detalhesMovimentacao">Detalhes da Movimentação:</label>
       <textarea [(ngModel)]="detalhesMovimentacao" name="detalhesMovimentacao"></textarea>
     </div>
+
     <app-button textButton="Cadastrar" size="100" (click)="cadastrarIndicio()">Cadastrar</app-button>
   </form>
 </div>

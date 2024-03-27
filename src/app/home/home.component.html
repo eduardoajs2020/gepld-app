@@ -1,19 +1,35 @@
 <app-menu></app-menu>
 <app-header></app-header>
-<div class="container-fluid pt-3">
-  <div class="row">
 
 
-            <app-button textButton="Iniciar" routerLink="/usuarios"></app-button>
+          <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center align-items-center"
+            data-bs-ride="carousel" data-bs-interval="200">
+
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <img src="../../assets/pld_1.png" class="d-block img-fluid m-5" style="max-width: 850px; max-height: 800px;"
+                  alt="Slide 1">
+              </div>
+
+              <div class="carousel-item">
+                <img src="../../assets/pld_2.png" class="d-block img-fluid m-5" style="max-width: 850px; max-height: 800px;"
+                  alt="Slide 2">
+              </div>
+
+              <div class="carousel-item">
+                <img src="../../assets/pld_3.png" class="d-block img-fluid m-5" style="max-width: 850px; max-height: 800px;"
+                  alt="Slide 3">
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="col-12 col-md-12">
-            <img src="../../assets/OIP.jpeg" width="100">
-          </div>
-        </div>
-
-
-
-
-
-
-

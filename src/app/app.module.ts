@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HeaderComponent } from './components/header/header.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { ConnectionComponent } from './connection/connection.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     ButtonComponent,
     MenuComponent,
     HeaderComponent,
+    ConnectionComponent,
   ],
   imports: [
     BrowserModule,

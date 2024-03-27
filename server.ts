@@ -11,6 +11,57 @@ export function app(): express.Express {
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
+  const bodyParser = require('body-parser');
+  const sql = require('mssql');
+  const cors = require('cors');
+
+  const app = express();
+  const port = 4200;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Configuração da string de conexão com o SQL Server
+  const config = {
+  user: 'maxer', // substitua com o usuário do SQL Server
+  password: '10205618', // substitua com a senha do SQL Server
+  server: 'localhost',
+  database: 'PLDApp',
+};
+
+ // Rota para conectar ao banco de dados
+app.post('/api/connect', (req, res) => {
+  sql.connect(config, (err: any) => {
+    if (err) {
+      console.error('Erro ao conectar ao banco de dados:', err);
+      res.status(500).send('Erro ao conectar ao banco de dados.');
+      return;
+    }
+    console.log('Conexão bem-sucedida ao banco de dados SQL Server.');
+    res.status(200).send('Conexão bem-sucedida ao banco de dados SQL Server.');
+  });
+});
+
+// Rota para realizar operações CRUD no banco de dados
+
+// Exemplo: Rota para obter todos os registros de uma tabela
+app.get('/api/registros', (req, res) => {
+  const query = 'SELECT * FROM tabela';
+  sql.query(query, (err: any, result: { recordset: any; }) => {
+    if (err) {
+      console.error('Erro ao executar consulta:', err);
+      res.status(500).send('Erro ao executar consulta.');
+      return;
+    }
+    res.status(200).json(result.recordset);
+  });
+});
+
+// Mais rotas para outras operações CRUD
+
+app.listen(port, () => {
+  console.log(`Servidor está escutando na porta ${port}`);
+});
 
   const commonEngine = new CommonEngine();
 

@@ -8,6 +8,9 @@
     <input [(ngModel)]="userName" [ngModelOptions]="{standalone:true}" class="input-form" type="text"
       placeholder="Digite sua Matrícula">
 
+    <input [(ngModel)]="senha" [ngModelOptions]="{standalone:true}" class="input-form" type="password"
+      placeholder="Digite sua Senha">
+
     <app-button textButton="Acessar" size="100" (click)="login()"></app-button>
   </form>
 

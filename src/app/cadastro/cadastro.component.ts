@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
+
 export class CadastroComponent implements OnInit{
-buscaCliente() {
-throw new Error('Method not implemented.');
-}
-cadastro() {
-throw new Error('Method not implemented.');
-}
+[x: string]: any;
+
 
   tipoPessoa: number = 1;
   cpfCnpj: string = '';
@@ -27,7 +24,19 @@ throw new Error('Method not implemented.');
   ngOnInit(): void {
   }
 
-  cadastrarIndicio(): void {
+  buscaCliente() {
+
+    throw new Error('Method not implemented.');
+
+  }
+
+  cadastro() {
+
+    throw new Error('Method not implemented.');
+
+  }
+
+  cadastrarIndicio() {
     const data = {
       tipoPessoa: this.tipoPessoa,
       cpfCnpj: this.cpfCnpj,
@@ -38,10 +47,12 @@ throw new Error('Method not implemented.');
       detalhesMovimentacao: this.detalhesMovimentacao
     };
 
-    this.http.post<any>('http://localhost:4200/indicios', data)
+    this.http.post<any>('http://localhost:4200/connection', data)
       .subscribe(response => {
-        console.log(response);
-      });
+        console.log('Resposta:', response);
+      }
+
+    );
   }
 
 
